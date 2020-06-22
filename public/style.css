@@ -19,6 +19,10 @@ nav{
   justify-content: space-around;
 }
 
+#video{
+  border: 3px solid maroon
+}
+
 @media screen and (max-width: 600px){
   *{
     padding: 0;

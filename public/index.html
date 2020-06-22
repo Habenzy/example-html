@@ -12,6 +12,8 @@
   <div id='header'>
     <h1>Hello, World!</h1>
   </div>
+  <iframe id="video" src="https://www.youtube.com/embed/zPvbABXveSI" frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   <nav>
     <a href="./about.html">About Page</a>
     <a href='#first'>The first section</a>
@@ -22,6 +24,13 @@
     <!--link to footer and logo-->
   </nav>
   <h2 id='first'>This is the first section</h2>
+  <form id='input'>
+    <input id='text' type='text' />
+    <input type='submit' />
+  </form>
+  <div id='display'>
+    
+  </div>
   <hr />
   <div class='container'>
     <img src="./IMG_3972.jpg" />
@@ -410,6 +419,27 @@
     <div>More text! Divs on divs in spans</div>
   </span>
   <a href='https://www.burlingtoncodeacademy.com'><img src="./bca-logo.png" width='200px' /></a>
+  <script>
+    //get the elements you want to target, ad assing them to variables
+    let display = document.getElementById('display')
+    let input = document.getElementById('input')
+    let userIn = document.getElementById('text')
+
+
+    //setup 'sobmit' event listener
+    input.addEventListener('submit', (event) => {
+      //when the form is submitted DON'T reload the page
+      event.preventDefault();
+      //grab the value of your text input
+      let userRes = userIn.value
+      //note that inputs DO NOT HAVE a textContent property
+
+      //Add that value to your display area
+      display.textContent += userRes
+    })
+
+  </script>
+
 </body>
 
 </html>
